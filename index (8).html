@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYNAX GLOBAL | Professional Cleaning Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Roboto',sans-serif;background:#f4f6f8;color:#333;line-height:1.6;scroll-behavior:smooth;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;height:auto;display:block;}
+
+  header{background:#00236b;padding:20px 50px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
+  .logo{font-family:'Barlow',sans-serif;font-size:26px;font-weight:700;color:#f5ad0d;}
+  nav{display:flex;gap:25px;}
+  nav a{color:#fff;font-weight:500;transition:0.3s;}
+  nav a:hover{color:#f5ad0d;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .hamburger div{width:25px;height:3px;background:#fff;transition:0.3s;}
+  nav.active{display:flex;flex-direction:column;position:absolute;top:70px;right:50px;background:#00236b;padding:20px;border-radius:8px;}
+
+  #hero{background:url('/IMG-20251217-WA0000.jpg') center/cover no-repeat;color:#fff;min-height:550px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:100px 20px;}
+  #hero::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);}
+  #hero div{position:relative;z-index:1;}
+  #hero h1{font-family:'Barlow',sans-serif;font-size:46px;margin-bottom:20px;text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
+  #hero p{font-size:18px;margin-bottom:30px;text-shadow:1px 1px 6px rgba(0,0,0,0.6);}
+  .btn{display:inline-block;padding:15px 40px;margin:0 10px;border-radius:6px;font-weight:600;transition:0.3s;}
+  .btn-primary{background:#f5ad0d;color:#fff;border:none;}
+  .btn-primary:hover{background:#e09400;}
+  .btn-secondary{background:#fff;color:#f5ad0d;border:2px solid #f5ad0d;}
+  .btn-secondary:hover{background:#f5ad0d;color:#fff;}
+
+  #features, #services, #blog{padding:80px 50px;}
+  #features, #blog{background:#f4f6f8;}
+  .feature-card,.service-card,.blog-card{background:#fff;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);text-align:center;margin-bottom:20px;opacity:0;transform:translateY(50px);transition:all 0.6s ease-out;}
+  .feature-card.show,.service-card.show,.blog-card.show{opacity:1;transform:translateY(0);}
+  .feature-card i{font-size:48px;color:#f5ad0d;margin-bottom:20px;}
+  h2{font-family:'Barlow',sans-serif;color:#00236b;margin-bottom:40px;font-size:36px;}
+  #services .service-cards,.blog .blog-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+  #contact form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:20px;}
+  #contact input,#contact select,#contact textarea,#contact button{padding:15px;border-radius:6px;border:1px solid #ccc;font-size:16px;width:100%;}
+  #contact textarea{resize:vertical;min-height:120px;}
+  #contact button{background:#f5ad0d;color:#fff;border:none;cursor:pointer;font-weight:600;}
+  #contact button:hover{background:#e09400;}
+  footer{background:#00236b;color:#fff;text-align:center;padding:50px 20px;}
+  footer a{color:#f5ad0d;margin:0 12px;font-size:18px;transition:0.3s;}
+  footer a:hover{color:#e09400;}
+
+  @media(max-width:768px){nav{display:none;position:absolute;top:70px;right:50px;} .hamburger{display:flex;} #hero h1{font-size:32px;} #hero p{font-size:16px;}}
+
+/* ================= BLOG CARDS STYLING ================= */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-top: 4px solid #f5ad0d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+}
+
+.blog-card h3 {
+  color: #00236b;
+  font-family: 'Barlow', sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.blog-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  border-top-color: #e09400;
+}
+
+/* Slide Animations */
+.blog-card.slide-left { transform: translateX(-50px); opacity:0; }
+.blog-card.slide-right { transform: translateX(50px); opacity:0; }
+.blog-card.slide-up { transform: translateY(50px); opacity:0; }
+
+.blog-card.show {
+  transform: translateX(0) translateY(0);
+  opacity: 1;
+  transition: all 0.7s ease-out;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<body>
+
+<header>
+  <div class="logo">DYNAX GLOBAL</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#features">Features</a>
+    <a href="#services">Services</a>
+    <a href="#blog">News</a>
+    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+</header>
+
+<section id="hero">
+  <div>
+    <h1>Interested in Cleaning Your Space?</h1>
+    <p>Hire us! We are a professional cleaning company offering all types of cleaning and maintenance services.</p>
+    <a href="get quote.html" class="btn btn-primary">Get a Quote</a>
+    <a href="about.html" class="btn btn-secondary">About Us</a>
+  </div>
+</section>
+
+<section id="features">
+  <h2>Our Features</h2>
+  <div class="feature-card"><i class="fas fa-handshake"></i><h3>Honesty & Commitment</h3><p>Top provider of interior & exterior facility maintenance.</p></div>
+  <div class="feature-card"><i class="fas fa-certificate"></i><h3>Quality Policy Service</h3><p>Dedicated to top-tier janitorial & facility solutions.</p></div>
+  <div class="feature-card"><i class="fas fa-helmet-safety"></i><h3>Health & Safety Policy</h3><p>Ensuring protection of employees, clients, and stakeholders.</p></div>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="service-cards">
+    <div class="service-card">Building Maintenance</div>
+    <div class="service-card">Industrial Cleaning</div>
+    <div class="service-card">Retail & Commercial Cleaning</div>
+    <div class="service-card">Janitorial Cleaning</div>
+    <div class="service-card">Pest Control</div>
+  </div>
+</section>
+
+<section id="blog">
+  <h2>Latest News</h2>
+  <div class="blog-container">
+
+    <div class="blog-card slide-left">
+      <h3>Discover the Risks of Toxic Fumigants</h3>
+      <p>
+        Pest control is crucial for a safe environment. Toxic fumigants, often used in pest control, can be harmful to humans, pets, and the environment if not handled properly. It's essential to hire professional pest control services that follow safety standards and regulations. Eco-friendly fumigants and integrated pest management methods are safer alternatives that reduce health risks while effectively controlling pests in homes and offices.
+      </p>
+    </div>
+
+    <div class="blog-card slide-right">
+      <h3>5 Ways to Maintain a Spotless Office</h3>
+      <p>
+        Maintaining a clean office boosts productivity and employee health. Daily dusting and vacuuming, disinfecting high-touch surfaces like keyboards and door handles, organizing workspaces, encouraging hand hygiene, and using air purifiers are simple but effective ways to maintain a spotless office. A consistent cleaning routine ensures a professional and hygienic environment for employees and visitors alike.
+      </p>
+    </div>
+
+    <div class="blog-card slide-left">
+      <h3>Eco-Friendly Cleaning Solutions</h3>
+      <p>
+        Cleaning doesn’t have to harm the environment. Eco-friendly cleaning solutions involve using biodegradable products, reducing chemical usage, and recycling cleaning materials. Switching to plant-based cleaners, limiting harsh chemicals, and using reusable tools helps protect the environment while maintaining cleanliness. Businesses and homeowners can adopt sustainable cleaning practices without compromising on hygiene.
+      </p>
+    </div>
+
+    <div class="blog-card slide-right">
+      <h3>Importance of Disinfection in Workplaces</h3>
+      <p>
+        Disinfection in workplaces prevents the spread of germs and reduces employee absenteeism. Regularly disinfecting desks, doorknobs, shared equipment, and communal spaces helps control the transmission of viruses and bacteria. Implementing a structured disinfection schedule enhances employee safety, boosts productivity, and creates a healthier work environment.
+      </p>
+    </div>
+
+    <div class="blog-card slide-up">
+      <h3>Industrial Cleaning Standards Explained</h3>
+      <p>
+        Industrial cleaning requires strict adherence to hygiene and safety standards. Cleaning large-scale facilities such as factories, warehouses, and laboratories involves specialized procedures, trained personnel, and regulated chemical usage. Following industrial cleaning standards ensures the safety of staff, prevents contamination, maintains equipment, and complies with environmental and safety regulations.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form id="whatsappForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Your Phone" required>
+    <select id="service" required>
+      <option value="">Select a Service</option>
+      <option>Building Maintenance</option>
+      <option>Industrial Cleaning</option>
+      <option>Retail & Commercial Cleaning</option>
+      <option>Janitorial Cleaning</option>
+      <option>Pest Control</option>
+    </select>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2026 DYNAX GLOBAL</p>
+  <div>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+</footer>
+
+<script>
+  // Hamburger toggle
+  function toggleMenu(){document.querySelector('nav').classList.toggle('active');}
+
+  // Scroll animations for cards
+  const cards = document.querySelectorAll('.feature-card, .service-card, .blog-card');
+  function animateCards(){
+    const triggerBottom = window.innerHeight * 0.85;
+    cards.forEach(card=>{
+      const cardTop = card.getBoundingClientRect().top;
+      if(cardTop<triggerBottom) card.classList.add('show');
+    });
+  }
+  window.addEventListener('scroll', animateCards);
+  window.addEventListener('load', animateCards);
+
+  // WhatsApp Form
+  document.getElementById("whatsappForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name=document.getElementById("name").value;
+    const phone=document.getElementById("phone").value;
+    const service=document.getElementById("service").value;
+    const message=document.getElementById("message").value;
+    const companyNumber="2348039166752"; // replace with your number
+    const whatsappMessage=`Hello DYNAX GLOBAL,%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A%0A*Message:* ${message}`;
+    window.open(`https://wa.me/${companyNumber}?text=${whatsappMessage}`,"_blank");
+  });
+</script>
+
+</body>
+</html>

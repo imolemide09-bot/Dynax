@@ -1,0 +1,243 @@
+/* ======================
+   GLOBAL RESET
+====================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f7f9fc;
+}
+
+/* ======================
+   LINKS & BUTTONS
+====================== */
+a {
+  color: #0a7cff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #064ea1;
+}
+
+button,
+.wpcf7-submit {
+  background: #0a7cff;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+.wpcf7-submit:hover {
+  background: #064ea1;
+}
+
+/* ======================
+   HEADER
+====================== */
+.header-inner-wrap {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+
+.header-button a {
+  background: #0a7cff;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.header-button a:hover {
+  background: #064ea1;
+}
+
+/* ======================
+   PAGE TITLE & BREADCRUMB
+====================== */
+.inner-wrap {
+  background: #ffffff;
+  padding: 40px 0;
+  margin-bottom: 30px;
+}
+
+.main-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+#breadcrumbs {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+#breadcrumbs a {
+  color: #0a7cff;
+}
+
+/* ======================
+   MAIN CONTENT
+====================== */
+.site-main {
+  padding-bottom: 60px;
+}
+
+.page-content {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================
+   FORM STYLING
+====================== */
+.wpcf7-form p {
+  margin-bottom: 20px;
+}
+
+.wpcf7-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.wpcf7-form input,
+.wpcf7-form select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wpcf7-form input:focus,
+.wpcf7-form select:focus {
+  border-color: #0a7cff;
+  box-shadow: 0 0 0 3px rgba(10, 124, 255, 0.15);
+  outline: none;
+}
+
+/* ======================
+   FOOTER
+====================== */
+#footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 60px 0 30px;
+}
+
+#footer p,
+#footer li {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.widget-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+#footer a {
+  color: #9ca3af;
+}
+
+#footer a:hover {
+  color: #ffffff;
+}
+
+#footer ul {
+  list-style: none;
+}
+
+#footer li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+#footer i {
+  margin-right: 12px;
+  color: #0a7cff;
+}
+
+/* ======================
+   SOCIAL ICONS
+====================== */
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  background: #0a7cff;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 768px) {
+  .site-header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-title {
+    font-size: 28px;
+  }
+
+  .page-content {
+    padding: 25px;
+  }
+}
+.error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+}
+
+.input-error {
+  border-color: #dc2626;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Quotation | Dynax Nigeria Limited</title>
+  <meta name="description" content="Request a professional cleaning service quotation from dynaxcleaners Nigeria Limited. Reliable commercial, industrial, and facility cleaning solutions.">
+
+  <style>
+    /* GLOBAL RESET */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+
+    body { background: #f7f9fc; color: #1f2937; }
+
+    a { text-decoration: none; color: #0a7cff; transition: 0.3s; }
+    a:hover { color: #064ea1; }
+
+    /* HEADER */
+    header { background:#fff; border-bottom:1px solid #e5e7eb; padding:15px 0; }
+    .site-header-inner { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+    .header-button a { background:#0a7cff; color:#fff; padding:10px 20px; border-radius:5px; font-weight:600; }
+    .header-button a:hover { background:#064ea1; }
+
+    /* PAGE TITLE */
+    .inner-wrap { background:#fff; padding:40px 20px; margin-bottom:30px; text-align:center; }
+    .main-title { font-size:36px; font-weight:700; margin-bottom:10px; }
+    #breadcrumbs { font-size:14px; color:#6b7280; }
+    #breadcrumbs a { color:#0a7cff; }
+
+    /* FORM CONTAINER */
+    .byron-container { max-width:800px; margin:auto; padding:0 20px; }
+    .page-content { background:#fff; padding:40px; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.05); }
+    .intro-text { margin-bottom:25px; font-size:16px; line-height:1.6; }
+
+    .form-group { margin-bottom:20px; }
+    .form-group label { display:block; font-weight:600; margin-bottom:5px; }
+    .form-group input, .form-group select { width:100%; padding:12px 15px; border:1px solid #d1d5db; border-radius:5px; font-size:15px; transition: 0.3s; }
+    .form-group input:focus, .form-group select:focus { border-color:#0a7cff; box-shadow:0 0 0 3px rgba(10,124,255,0.15); outline:none; }
+    .error { color:#dc2626; font-size:13px; margin-top:5px; }
+
+    .wpcf7-submit { background:#0a7cff; color:#fff; border:none; padding:14px 30px; font-weight:600; border-radius:5px; cursor:pointer; font-size:16px; transition:0.3s; }
+    .wpcf7-submit:hover { background:#064ea1; }
+
+    /* FOOTER */
+    footer { background:#111827; color:#d1d5db; padding:60px 20px 30px; }
+    footer img { margin-bottom:20px; }
+    footer h2 { color:#fff; margin-bottom:15px; font-size:16px; text-transform:uppercase; }
+    footer p, footer li { font-size:14px; line-height:1.7; }
+    footer ul { list-style:none; padding:0; }
+    footer li { margin-bottom:10px; }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .main-title { font-size:28px; }
+      .page-content { padding:25px; }
+      .site-header-inner { flex-direction:column; gap:15px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="site-header-inner"> 
+      <img src="/dynax/img/7jKiiXYQ.jpg" alt="dynax Logo" width="140">
+    </a>
+    <div class="header-button">
+      <a href="#quotation-form">Get in Touch</a>
+    </div>
+  </div>
+</header>
+
+<section class="inner-wrap">
+  <h1 class="main-title">Request a Quotation</h1>
+  <nav id="breadcrumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> / Request a Quotation
+  </nav>
+</section>
+
+<main class="byron-container">
+  <article class="page-content">
+    <p class="intro-text">
+      Kindly complete the form below and a member of our team will contact you
+      with a tailored quotation for your cleaning requirements.
+    </p>
+
+    <!-- FORM -->
+    <form id="quotation-form">
+      <div class="form-group">
+        <label for="your-name">Full Name</label>
+        <input type="text" id="your-name" name="name" required>
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="your-email">Email Address</label>
+        <input type="email" id="your-email" name="email" required>
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="your-phone">Phone Number</label>
+        <input type="tel" id="your-phone" name="phone" required>
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="your-service">Service Required</label>
+        <select id="your-service" name="service" required>
+          <option value="">Select a service</option>
+          <option>Building Maintenance</option>
+          <option>Industrial Cleaning</option>
+          <option>Retail & Commercial Cleaning</option>
+          <option>Janitorial Services</option>
+          <option>Pest Control</option>
+          <option>Facade Cleaning</option>
+          <option>Aircraft Cleaning</option>
+          <option>Post-Construction Cleaning</option>
+          <option>Facility Management</option>
+          <option>Disinfection Services</option>
+        </select>
+        <small class="error"></small>
+      </div>
+
+      <button type="submit" class="wpcf7-submit">Send via WhatsApp</button>
+    </form>
+  </article>
+</main>
+
+<footer>
+  <div class="byron-container footer-grid">
+    <div>
+      <img src="/dynax/img/7jKiiXYQ.jpg" alt="dynax Logo" width="180">
+      <p>Dynax Nigeria Limited is a professional cleaning services company delivering reliable, efficient, and industry-leading solutions across commercial, industrial, and residential sectors.</p>
+    </div>
+    <div>
+      <h2>Lagos Office</h2>
+      <p>SW3A, Second Floor,<br>West Pavilion, National Assembly Complex,<br>TBS, Lagos.</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <ul>
+        <li>📞 0703 566 5180, 0703 513 9848</li>
+        <li>📍 Lagos & Abuja, Nigeria</li>
+        <li>✉️ dynaxcleaners@yahoo.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 dynax Nigeria Limited. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("quotation-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let isValid = true;
+  const name = document.getElementById("your-name");
+  const email = document.getElementById("your-email");
+  const phone = document.getElementById("your-phone");
+  const service = document.getElementById("your-service");
+
+  clearErrors();
+
+  if(name.value.trim().length < 3){ showError(name, "Please enter your full name."); isValid=false; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){ showError(email,"Please enter a valid email."); isValid=false; }
+  if(!/^[0-9+\s()-]{7,15}$/.test(phone.value)){ showError(phone,"Please enter a valid phone number."); isValid=false; }
+  if(service.value===""){ showError(service,"Please select a service."); isValid=false; }
+
+  if(!isValid) return;
+
+  const waNumber = "+234 803 916 6752"; // Your WhatsApp number
+  const message = `New Quotation Request:%0AName: ${encodeURIComponent(name.value)}%0AEmail: ${encodeURIComponent(email.value)}%0APhone: ${encodeURIComponent(phone.value)}%0AService: ${encodeURIComponent(service.value)}`;
+  const waURL = `https://wa.me/${waNumber}?text=${message}`;
+  window.open(waURL,"_blank");
+});
+
+function showError(input,msg){ const error=input.parentElement.querySelector(".error"); error.textContent=msg; input.classList.add("input-error"); }
+function clearErrors(){ document.querySelectorAll(".error").forEach(el=>el.textContent=""); document.querySelectorAll(".input-error").forEach(el=>el.classList.remove("input-error")); }
+</script>
+
+</body>
+</html>

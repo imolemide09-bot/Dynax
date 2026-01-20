@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Dynax</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* Reset & base */
+  body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f8f9fa;
+    color:#333;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* Header */
+  .utility-nav {
+    background:#000107;
+    color:#fff;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+  }
+
+  .navigation-main-logo {
+    display:inline-block;
+    width:150px;
+    height:40px;
+    object-fit:contain;
+  }
+
+  .utility-nav-links {
+    display:flex;
+    list-style:none;
+    gap:20px;
+    align-items:center;
+  }
+
+  .utility-nav-links li a {
+    color:#fff;
+    font-weight:bold;
+  }
+
+  /* Mobile hamburger */
+  .utility-nav-mobile {
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    cursor:pointer;
+    gap:5px;
+  }
+
+  .utility-nav-mobile span {
+    display:block;
+    width:25px;
+    height:3px;
+    background:#fff;
+    border-radius:2px;
+    transition:0.3s;
+  }
+
+  /* Mobile menu */
+  @media(max-width:768px){
+    .utility-nav-links {
+      display:none;
+      flex-direction:column;
+      background:#040B69;
+      position:absolute;
+      top:60px;
+      right:20px;
+      padding:20px;
+      border-radius:8px;
+      width:200px;
+      gap:15px;
+    }
+    .utility-nav-links.active { display:flex; }
+
+    .utility-nav-mobile { display:flex; }
+  }
+
+  /* Breadcrumb */
+  .ri-top-msg{
+    background:#f5ad0d;
+    padding:10px 20px;
+  }
+
+  .breadcrumb-light{
+    list-style:none;
+    display:flex;
+    gap:5px;
+    font-size:14px;
+    margin:0;
+  }
+
+  .breadcrumb-light li a{
+    color:#000000;
+    font-weight:bold;
+  }
+
+  .breadcrumb-light li span{
+    color:#333;
+  }
+
+  /* Hero */
+  .hero {
+    text-align:center;
+    margin:40px 20px;
+  }
+
+  .hero-subtitle-text{
+    font-size:22px;
+    line-height:1.6;
+    color:#00236b;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+  }
+
+  /* Sections */
+  section{
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
+  }
+
+  .section-title{
+    text-align:center;
+    font-size:32px;
+    color:#00236b;
+    margin-bottom:20px;
+  }
+
+  .section-text{
+    text-align:center;
+    font-size:18px;
+    color:#333;
+    margin-bottom:40px;
+  }
+
+  /* Cards */
+  .cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+  }
+
+  .card{
+    background:#fff;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+    flex:1 1 250px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+  }
+
+  .card i{
+    font-size:40px;
+    color:#f5ad0d;
+    margin-bottom:15px;
+  }
+
+  .card h3{
+    color:#00236b;
+    margin-bottom:15px;
+  }
+
+  .card p{
+    color:#555;
+    line-height:1.6;
+  }
+
+  /* Team */
+  .team{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+  }
+
+  .member{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+    flex:1 1 220px;
+    text-align:center;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+  }
+
+  .member img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+  }
+
+  .member h4{
+    margin:10px 0;
+    color:#00236b;
+  }
+
+  .member p{
+    color:#555;
+    font-size:15px;
+  }
+
+  /* Footer */
+  footer{
+    background:#00236b;
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
+  }
+
+  footer a{
+    color:#f5ad0d;
+    margin:0 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="utility-nav">
+  <a href="/">
+    <img class="navigation-main-logo" src="/dynax/img/7jKiiXYQ.jpg" alt="Dynax Logo">
+  </a>
+
+  <ul class="utility-nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+
+  <!-- Mobile Hamburger -->
+  <div class="utility-nav-mobile" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-subtitle-text">
+    Dynax is committed to delivering top-notch cleaning and facility management services. We enhance lives, safeguard environments, and ensure businesses run safely and efficiently.
+  </p>
+</div>
+
+<!-- Mission / Vision / Values -->
+<section>
+  <h2 class="section-title">Our Mission, Vision & Values</h2>
+  <p class="section-text">We operate with honesty, integrity, and excellence, ensuring client satisfaction and global standards.</p>
+  <div class="cards">
+    <div class="card">
+      <i class="fas fa-bullseye"></i>
+      <h3>Our Mission</h3>
+      <p>To provide innovative, reliable, and sustainable cleaning solutions for commercial and residential clients.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-eye"></i>
+      <h3>Our Vision</h3>
+      <p>To be the leading facility management company recognized for quality, professionalism, and environmental stewardship.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-handshake"></i>
+      <h3>Our Values</h3>
+      <p>Integrity, commitment, safety, innovation, and customer satisfaction guide every project we undertake.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section>
+  <h2 class="section-title">Meet Our Team</h2>
+  <p class="section-text">Our skilled professionals ensure every project exceeds expectations.</p>
+  <div class="team">
+    <div class="member">
+      <img src="/dynax/img/IMG_20260110_113147.webp" alt="CEO">
+      <h4>Ayobami</h4>
+      <p>Chief Executive Officer</p>
+    </div>
+    <div class="member">
+      <img src="/dynax/img/pankaj-patel-_SgRNwAVNKw-unsplash.jpg" alt="Manager">
+      <h4>Cybermides</h4>
+      <p>Frontend developer</p>
+    </div>
+    <div class="member">
+      <img src="/dynax/img/csm_code_javascript_49d002a67e.webp" alt="Lead">
+      <h4>Tosin</h4>
+      <p>backend developer</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Dynax. All Rights Reserved.</p>
+  <div>
+    <a href="https://www.facebook.com/ayobami.familua.2025"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://vm.tiktok.com/ZSHo6PHwnUo67-q5WGW/"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/ayotheteacher?igsh=MWdsaHNjeXhpcnE5bg=="><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.querySelector('.utility-nav-links').classList.toggle('active');
+}
+
+// Scroll animations
+const fadeElements = document.querySelectorAll('.card, .member, .hero-subtitle-text');
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+  fadeElements.forEach((el, index) => {
+    const top = el.getBoundingClientRect().top;
+    if(top < triggerBottom){
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+      el.style.transitionDelay = `${index * 0.2}s`;
+    }
+  });
+});
+
+// Animate hero on load
+window.addEventListener('load', () => {
+  const hero = document.querySelector('.hero-subtitle-text');
+  hero.style.opacity = 1;
+  hero.style.transform = 'translateY(0)';
+});
+</script>
+
+</body>
+</html>
